@@ -1,0 +1,19 @@
+{
+    "config": {
+        "password": "yes",
+        "prefix": "!",
+        "debug": 1
+    },
+    "guilds": {
+        "guild_name": {
+            "id": 1000000000,
+            "admin_role": 1000000000,
+            "moderator_role": 1000000000,
+            "ticket_category": 1000000000,
+            "invites": {
+                "user_1_id": "count",
+                "user_2_id": "count"
+            }
+        }
+    }
+}
