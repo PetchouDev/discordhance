@@ -6,6 +6,9 @@ from core.config import MNGR
 
 
 class Bot(commands.Bot):
+
+    modules = []
+
     def __init__(self, token, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.token = token
@@ -25,7 +28,7 @@ class Bot(commands.Bot):
         await self.sync_all()
 
         # start tasks
-        self.start_task(self.get_cog("Basics"), "task_loop")
+        self.start_task("Basics", "task_loop")
             
 
     def wake_up(self):
@@ -42,20 +45,17 @@ class Bot(commands.Bot):
         if module not in self.modules:
             self.modules.append(module)
         try:
-            self.add_cog(module)
+            await self.add_cog(module(self))
         except Exception as e:
             print(e)
 
-
-    def add_module(self, module):
-        if module not in self.modules:
-            self.modules.append(module)
-        else:
-            pass
-
     # start task from CoG
     def start_task(self, module: commands.Cog, task_name:str):
-        asyncio.run(self.run_loop_asyncronously(module, task_name))
+        try:
+            getattr(module, task_name).start()
+        except Exception as e:
+            print(e)
+
 
 
     # run a task from a CoG

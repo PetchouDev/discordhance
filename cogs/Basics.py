@@ -36,7 +36,7 @@ class Basics(commands.Cog):
         await ctx.send(f"Pong ! {round(self.bot.latency * 1000)}ms")
 
     # task example
-    @task.loop(minutes=5)
+    @tasks.loop(minutes=5)
     async def task_loop(self):
         print("Task loop")
 

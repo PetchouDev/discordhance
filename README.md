@@ -53,6 +53,7 @@ You can either add commands directly to `core/client.py` (not recommended) or cr
 ### Tasks
 As for commands, you can either add events directly to `core/client.py` (not recommended) or create a new file with a CoG class in it in the `cogs` folder. 
 To start a task, you must call it somehow **after** waking the bot up. An example is given is the `on_ready` event in `core/client.py`.
+Basically, after defining a task in a CoG with the `discord.ext.tasks.loop` decorator, you can start by calling `bot.start_task("CoGName", TaskName)`.
 
 ### Events
 Once again, you can either add events directly to `core/client.py` (not recommended) or create a new file with a CoG class in it in the `cogs` folder. If you use events in CoGs, you must add the `@commands.Cog.listener()` decorator to the function. An example is given is the `cogs/ComponentsHandler.py` file.

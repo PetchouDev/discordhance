@@ -1,3 +1,7 @@
+# project development files
+data/token
+data/key
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

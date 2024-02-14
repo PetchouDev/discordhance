@@ -23,8 +23,8 @@ def xor(target, key):
 
     return ''.join(chr(c) for c in xor_result)
 
-# load flag
-def load_flag_with_password(key=None):
+# load token
+def load_token_with_password(key=None):
     if not key:
         key = getpass.getpass('Password: ')
     with open(BASE_DIR / 'data' / 'key', 'r') as f:
@@ -34,56 +34,56 @@ def load_flag_with_password(key=None):
         sys.exit(1)
     else:
         with open(BASE_DIR / 'data' / 'token', 'r') as f:
-            flag = f.read()
-        return xor(flag, key)
+            token = f.read()
+        return xor(token, key)
     
 
-def load_flag_without_password():
+def load_token_without_password():
     with open(BASE_DIR / 'data' / 'token', 'r') as f:
         return f.read()
 
 
-def setup_with_password(flag: str):
+def setup_with_password(token: str):
     password = input('Password: ')
     
-    xored_flag = xor(flag, password)
+    xored_token = xor(token, password)
 
     with open(BASE_DIR / 'data' / 'token', 'w') as f:
-        f.write(xored_flag)
+        f.write(xored_token)
 
     with open(BASE_DIR / 'data' / 'key', 'w') as f:
         f.write(hash_password(password))
     
     # test
-    print("Testing encryption. Enter your password, and you should see the flag.")
-    print(load_flag_with_password())
-    input("Press enter to continue.")
-    os.system("cls" if platform.system() == "Windows" else "clear")
+    print("Testing encryption. Enter your password, you should see the correct token.")
+    print(load_token_with_password())
+    print("Token saved. You should now be able to run the bot with password.")
+    
 
     MNGR["config"]["password"] = "yes"
+    MNGR.save()
 
 
-def setup_without_password(flag: str):
+def setup_without_password(token: str):
     with open(BASE_DIR / 'data' / 'token', 'w') as f:
-        f.write(flag)
-    
-    # test
-    print("Testing setup. You should see the flag.")
-    print(open(BASE_DIR / 'data' / 'token', 'r').read())
-    input("Press enter to continue.")
-    os.system("cls" if platform.system() == "Windows" else "clear")
+        f.write(token)
+
+    print("Token saved. You should now be able to run the bot without password.")
 
     MNGR["config"]["password"] = "no"
+    MNGR.save()
 
 
 def setup():
-    flag = input('Flag: ')
+    token = input('token: ')
 
     choice = input('Do you want to use a password? [y/n] (default: y) :')
     if choice.lower()[0] == 'n':
-        setup_without_password(flag)
+        print("Setting up without password.")
+        setup_without_password(token)
     else:
-        setup_with_password(flag)
+        print("Setting up with password.")
+        setup_with_password(token)
 
 
 
