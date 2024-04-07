@@ -1,4 +1,4 @@
-# DISCORDENCE  V0.1.0
+# DISCORDHENCE  V0.1.0
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Python](https://img.shields.io/badge/python-3670A0?logo=python&logoColor=ffdd54)
@@ -13,7 +13,7 @@ This is a pre-release version. It is not recommended to use it in production.
 If you find any bug, please report it in the issues section, and I will try to fix it as soon as possible.
 
 ## Table of content
-- [DISCORDENCE](#discordence)
+- [DISCORDHENCE](#discordence)
   - [Table of content](#table-of-content)
   - [Introduction](#introduction)
   - [Installation](#installation)
@@ -28,13 +28,13 @@ If you find any bug, please report it in the issues section, and I will try to f
   - [Contact](#contact)
 
 ## Introduction
-Discordence is a discord bot template that is easy to use and easy to understand. It is written in python and uses the discord.py library. 
+Discordhence is a discord bot template that is easy to use and easy to understand. It is written in python and uses the discord.py library. 
 It comes with a few commands and a few events, even if they are more designed for example purposes than for actual use.
 
 ## Installation
 1. Install python 3.8 or higher
-2. Clone the repository with `git clone https://github.com/@PetchouDev/discordence`
-3. Browse to the folder with `cd discordence`
+2. Clone the repository with `git clone https://github.com/@PetchouDev/discordhence`
+3. Browse to the folder with `cd discordhence`
 4. Install the requirements with `pip install -r requirements.txt`
 
 
