@@ -42,7 +42,7 @@ It comes with a few commands and a few events, even if they are more designed fo
 ### Setup
 1. Create a bot application on the [discord developer portal](https://discord.com/developers/applications).
 2. Copy the token and save it to your clipboard.
-3. Run `python manage.py --setup` and paste the token when asked. You will be prompted for a password, this will be used to encrypt your token and make it unreadable if someone access your files (recommended) for more security.
+3. Run `python manage.py setup` and paste the token when asked. You will be prompted for a password, this will be used to encrypt your token and make it unreadable if someone access your files (recommended) for more security.
 4. Make sure  the process worked by simply checking if the token displayed in your terminal is the same as the one you copied earlier.
 5. Edit the `data/data.json` file to your liking. You can change the prefix and the debug mode (0 = off, 1 = on - not implemented yet). You will also find how to manage guilds and their settings in this file. You don't have to use the same attributes, but keeping **ids** it strongly recommended.
 6. **For large scale projects** json files can be a great start ing point, but they are not the best solution. A better solution would be to use a database, such as sqlite3 or mysql.
