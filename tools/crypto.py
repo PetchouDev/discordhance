@@ -78,7 +78,7 @@ def setup():
     token = input('token: ')
 
     choice = input('Do you want to use a password? [y/n] (default: y) :')
-    if choice.lower()[0] == 'n':
+    if choice.lower().startswith('n'):
         print("Setting up without password.")
         setup_without_password(token)
     else:
