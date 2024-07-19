@@ -33,7 +33,7 @@ It comes with a few commands and a few events, even if they are more designed fo
 
 ## Installation
 1. Install python 3.8 or higher
-2. Clone the repository with `git clone https://github.com/@PetchouDev/discordhence`
+2. Clone the repository with `git clone https://github.com/PetchouDev/discordhence`
 3. Browse to the folder with `cd discordhence`
 4. Install the requirements with `pip install -r requirements.txt`
 
